@@ -84,13 +84,22 @@ color: var(--text-color); }
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+    animation: slide-back 0.2s;
 }
 
-.light #switch button {
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
+}
 
-    right: 0;
-    left: initial;
 
+
+
+
+
+
+
+.light #switch button { 
+    animation: slide-in 0.2s forwards;
 }
 #switch span{
     display: block;
@@ -175,5 +184,22 @@ footer{
     --bg-url: url( assets/bg-desktop.jpg);}
 
 .light { --bg-url: url(assets/bg-mobile-light.jpg);
+    }
+}
+/* animations */
+@keyframes slide-in { 
+    from {
+        left: 0;
+    }
+    to{ 
+        left: 50%;
+    }
+}
+@keyframes slide-back {
+    from {
+        left: 50%   
+    }
+    to{
+        left: 0;
     }
 }
